@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The AgGenius Website (TAG)</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+ 
+    header {
+      background-image: url('journals.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+  
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(48, 31, 11);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333;
+      transform: scale(1.1);
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 10px;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      max-width: 320px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .card h2 {
+      padding: 0 20px;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .card-content {
+      padding: 15px 20px 25px;
+    }
+
+   .blog-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .blog-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: rgb(48, 31, 11);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .blog-post {
+    background-color: #fff;
+    border: 2px solid brown; 
+    border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 25px;
+    color: black;
+    transition: box-shadow 0.3s;
+    text-transform: uppercase;
+    position: relative;
+    animation: none;
+  }
+
+  .blog-post:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    animation: bounce 0.5s ease-out; 
+  }
+
+  .blog-post h2 {
+    margin-top: 0;
+    color: #2a1a01;
+    font-size: 22px;
+  }
+
+  .blog-post p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .blog-post a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .blog-post a:hover {
+    text-decoration: underline;
+  }
+
+ 
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  
+}
+    footer {
+      background-color: rgb(48, 31, 11);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: fadeInFooter 2s ease-in-out;
+    }
+
+    @keyframes fadeInFooter {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 10px 0 0;
+      margin: 0;
+    }
+
+    footer ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    footer ul li a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer ul li a:hover {
+      color: #fff;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      display: none;
+      transition: 0.3s;
+    }
+
+    .back-to-top:hover {
+      background-color: #45a049;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div id="user-greeting" style="text-align:center; margin-top:10px; font-weight:bold;"></div>
+    <h1>THE AgGENIUS CONSULTANCY SERVICES WEBSITE</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html" target="_blank">ABOUT</a>
+    <a href="services.html" target="_blank">SERVICES</a>
+    <a href="gallery.html" target="_blank">GALLERY</a>
+    <a href="contact.html" target="_blank">CONTACT</a>
+    <a href="blog.html" target="_blank">BLOGSITE</a>
+    <a href="#" id="logout-link">LOGOUT</a>
+    <div id="nav-user-dropdown" style="position: relative; display: none;">
+      <div id="nav-user-profile-trigger" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+        <img id="nav-profile-pic" src="" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span id="nav-username" style="color: white; font-weight: bold;"></span>
+      </div>
+      <div id="profile-dropdown-menu" style="display: none; position: absolute; top: 40px; right: 0; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; color: #333; padding: 10px;">
+        <p><b>Username:</b> <span id="dropdown-username"></span></p>
+        <p><b>Full Name:</b> <span id="dropdown-fullName"></span></p>
+        <p><b>Email:</b> <span id="dropdown-email"></span></p>
+        <p><b>Phone:</b> <span id="dropdown-phone"></span></p>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>Who Are We?</h2>
+      <img src="Picture1.png" alt="A modern tractor used in agriculture" />
+      <div class="card-content">
+        <p>The AgGenius Consultancy Services is an agribusiness consultancy that provides expert financial advice and other professional services to individuals, businesses, and government organizations.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Why We Do What We Do?</h2>
+      <img src="OFFICE2.jpg" alt="Work environment at AgGenius" />
+      <div class="card-content">
+        <p>Our mission is to improve our clients' income levels by working with them across the agribusiness supply chain. This site connects stakeholders to sustainable solutions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What Do We Do?</h2>
+      <img src="cocoa.jpeg" alt="Cocoa farming" />
+      <div class="card-content">
+        <p>We provide financial advice, tools, and updates to farmers, investors, suppliers, and stakeholders. Join us in transforming agriculture through innovation.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="blog-section">
+    <h2><u>WEEKLY BLOG POSTS</u></h2>
+
+    <div class="blog-post">
+      <h2><u>THE MONEY WE SEEK IS ON OUR LAND</u></h2>
+      <p>(Posted on February 25, 2025 by James Brewwort)</p>
+      <p>THE SOIL IN AFRICA IS RICH. OUR POCKETS ARE DRY BECAUSE ALL OUR RICHES ARE BEING WALKED UPON... <a href="blog.html">Read more</a></p>
+    </div>
+
+    <div class="blog-post">
+      <h2><u>LOAN AS A LEGIT SOURCE OF FINANCIAL FREEDOM THROUGH AGRIC</u></h2>
+      <p>(Posted on February 23, 2025 by Maame Esi Hughes)</p>
+      <p>IT'S CLICHÉ TO THINK THAT THE ONLY WAY TO GAIN FINANCIAL FREEDOM IN THE AGRIC SECTOR IS THROUGH INVESTMENTS...  <a href="blog.html">Read more</a></p>
+    </div>
+
+    <div class="blog-post">
+      <h2><u>ARE CONSULTANCY SERVICES WORTH IT?</u></h2>
+      <p>(Posted on February 21, 2025 by Elizabeth Osei)</p>
+      <p>EVERY BUSINESS NEEDS PROPER ADVICE AND PLANNING. DISCOVER HOW PROFESSIONAL CONSULTANCY CHANGES THE GAME... <a href="blog.html">Read more</a></p>
+  </div>
+
+  <footer>
+    <p>© 2025 The AgGenius Consultancy Services. All Rights Reserved.</p>
+    <ul>
+      <li><a href="https://www.facebook.com">Facebook</a></li>
+      <li><a href="https://www.twitter.com">Twitter</a></li>
+      <li><a href="https://www.instagram.com">Instagram</a></li>
+    </ul>
+  </footer>
+
+  <button class="back-to-top" onclick="window.scrollTo(0, 0)">↑</button>
+  <script src="script.js"></script>
+  <script>
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.querySelector('.back-to-top').style.display = "block";
+      } else {
+        document.querySelector('.back-to-top').style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+    

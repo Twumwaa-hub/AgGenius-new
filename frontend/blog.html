@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogsite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #312504;
+    }
+
+    header {
+      background-image: url('journals.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd99;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .main {
+      flex: 3;
+      margin-right: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .post {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .post:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .post h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #2a1a01;
+    }
+
+    .post p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .post small {
+      display: block;
+      margin-bottom: 10px;
+      color: #777;
+    }
+
+    .post a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .post a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      color: #2a1a01;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li a {
+      color: #4CAF50;
+      text-decoration: none;
+      display: block;
+      padding: 5px 0;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2a1a01;
+      background-image: url('journals.jpg');
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .main {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>OUR BLOG SITE</h1>
+    <nav>
+        <a href="index.html" home="_blank">HOME</a>
+        <a href="about.html" target="_blank">ABOUT</a>
+        <a href="services.html" target="_blank">SERVICES</a>
+        <a href="gallery.html" target="_blank">GALLERY</a>
+        <a href="contact.html" target="_blank">CONTACT</a>
+        <a href="blog.html">BLOGSITE</a>
+        <a href="#" id="logout-link">LOGOUT</a>
+        <!-- Container for user profile picture and username dropdown -->
+        <div id="nav-user-dropdown" style="position: relative; display: none;">
+          <div id="nav-user-profile-trigger" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+            <img id="nav-profile-pic" src="" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+            <span id="nav-username" style="color: white; font-weight: bold;"></span>
+          </div>
+          <!-- Dropdown Menu -->
+          <div id="profile-dropdown-menu" style="display: none; position: absolute; top: 40px; right: 0; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; color: #333; padding: 10px;">
+            <p><b>Username:</b> <span id="dropdown-username"></span></p>
+            <p><b>Full Name:</b> <span id="dropdown-fullName"></span></p>
+            <p><b>Email:</b> <span id="dropdown-email"></span></p>
+            <p><b>Phone:</b> <span id="dropdown-phone"></span></p>
+            <!-- Add other details here if needed -->
+          </div>
+        </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <div class="post">
+        <h2><u>Are Consultancy Services Worth It?</u></h2>
+        <small>Posted on February 21, 2025 by Elizabeth Osei</small>
+        <p>Every professional setup or business needs proper expert advice to grow efficiently. Learn how consultancy services can boost your ROI.</p>
+        <a href="#">Read more</a>
+      </div>
+
+      <div class="post">
+        <h2><u>How Agribusiness Is Evolving in Africa</u></h2>
+        <small>Posted on January 18, 2025 by Joseph Adjei</small>
+        <p>Agribusiness in Africa is not just about farming. Discover how tech and consulting are reshaping the entire value chain.</p>
+        <a href="#">Read more</a>
+      </div>
+
+      <div class="post">
+        <h2><u>Top 5 Tips to Manage Agricultural Finances</u></h2>
+        <small>Posted on January 10, 2025 by Ama Serwaa</small>
+        <p>Managing finances in the agribusiness sector can be challenging. Here's how to make smart decisions for long-term success.</p>
+        <a href="#">Read more</a>
+      </div>
+
+      <div class="post">
+        <h2><u>Why Agritech is the Future</u></h2>
+        <small>Posted on January 2, 2025 by Kwame Mensah</small>
+        <p>Explore the rise of agricultural technology and how it's changing how we grow, harvest, and distribute food.</p>
+        <a href="#">Read more</a>
+      </div>
+
+      <div class="post">
+        <h2><u>Sustainable Farming Practices</u></h2>
+        <small>Posted on February 15, 2025 by John Mensah</small>
+        <p>Sustainable farming is not just a trend; it's a necessity for the future of agriculture. Learn how implementing sustainable practices can improve your yield while protecting the environment.</p>
+        <a href="#">Read more</a>
+      </div>
+
+      <div class="post">
+        <h2><u>Agricultural Investment Opportunities</u></h2>
+        <small>Posted on February 10, 2025 by Sarah Addo</small>
+        <p>The agricultural sector offers numerous investment opportunities. From farm equipment to land acquisition, discover how you can grow your wealth through strategic agricultural investments.</p>
+        <a href="#">Read more</a>
+      </div>
+
+<div id="post-form-container" style="background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+  <h2>Create a Blog Post</h2>
+  <form id="blog-form">
+    <input type="text" id="blog-title" placeholder="Post Title" required style="width:100%; padding:10px; margin-bottom:10px;" />
+    <textarea id="blog-content" placeholder="Write your post here..." rows="5" required style="width:100%; padding:10px;"></textarea>
+    <button type="submit" style="margin-top:10px; padding:10px 20px; background:#4CAF50; color:white; border:none; border-radius:4px;">Post</button>
+    <p id="blog-message" style="color:red;"></p>
+  </form>
+</div>
+
+
+<div id="blog-posts"></div>
+
+
+    </main>
+
+    <aside class="sidebar">
+      <h3>About Us</h3>
+      <p>
+        The AgGenius Consultancy Services is an agribusiness consultancy that provides expert financial advice and other professional services to individuals, businesses, and government organizations to succeed in the agricultural sector.
+      </p>
+
+      <h3>Major Categories</h3>
+      <ul>
+        <li><a href="#">Investments</a></li>
+        <li><a href="#">Savings</a></li>
+        <li><a href="#">Sustainable Farming</a></li>
+        <li><a href="#">Financial Planning</a></li>
+        <li><a href="#">Business Strategy</a></li>
+        <li><a href="#">Market Analysis</a></li>
+      </ul>
+
+      <h3>Recent Posts</h3>
+          <ul>
+            <li><a href="#">Are Consultancy Services Worth It?</a></li>
+            <li><a href="#">Sustainable Farming Practices</a></li>
+            <li><a href="#">Agricultural Investment Opportunities</a></li>
+          </ul>
+    </aside>
+  </div>
+
+  <footer>
+    <p>© 2025 Our BlogSite. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+
+  <script>
+    const currentUser = localStorage.getItem("currentUser");
+    const blogForm = document.getElementById("blog-form");
+    const postContainer = document.getElementById("blog-posts");
+    const message = document.getElementById("blog-message");
+    const postFormSection = document.getElementById("post-form-container");
+  
+    function loadPosts() {
+      const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  
+      if (posts.length === 0) {
+        postContainer.innerHTML = `<p>No posts yet. Be the first to write one!</p>`;
+        return;
+      }
+  
+      postContainer.innerHTML = "";
+      posts.reverse().forEach(post => {
+        const postDiv = document.createElement("div");
+        postDiv.className = "post";
+        postDiv.innerHTML = `
+          <h2><u>${post.title}</u></h2>
+          <small>Posted on ${post.date} by ${post.author}</small>
+          <p>${post.content}</p>
+        `;
+        postContainer.appendChild(postDiv);
+      });
+    }
+  
+    
+    if (blogForm) {
+      blogForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        const title = document.getElementById("blog-title").value.trim();
+        const content = document.getElementById("blog-content").value.trim();
+  
+        if (!title || !content) {
+          message.textContent = "Please fill in all fields.";
+          return;
+        }
+  
+        const newPost = {
+          title,
+          content,
+          author: currentUser,
+          date: new Date().toLocaleDateString(),
+        };
+  
+        const posts = JSON.parse(localStorage.getItem("posts")) || [];
+        posts.push(newPost);
+        localStorage.setItem("posts", JSON.stringify(posts));
+  
+        blogForm.reset();
+        message.textContent = "";
+        loadPosts();
+      });
+    }
+  
+  
+    loadPosts();
+  </script>
+  
+</body>
+</html>

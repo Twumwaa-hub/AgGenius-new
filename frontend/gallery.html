@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - The AgGenius Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8f8f8;
+        }
+
+       
+        .header {
+            background-image: url('journals.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(48, 31, 11);
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            margin: 4px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+        }
+
+    
+        .main {
+            max-width: 1000px;
+            margin: 40px auto 20px;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        .main h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .main p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+      
+        .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 30px 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                padding: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                width: 90%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="header">
+        <h1>GALLERY</h1>
+    </div>
+
+   
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="gallery.html" class="active">GALLERY</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="blog.html">BLOGSITE</a>
+        <a href="#" id="logout-link">LOGOUT</a>
+        <!-- Container for user profile picture and username dropdown -->
+        <div id="nav-user-dropdown" style="position: relative; display: none;">
+          <div id="nav-user-profile-trigger" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+            <img id="nav-profile-pic" src="" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+            <span id="nav-username" style="color: white; font-weight: bold;"></span>
+          </div>
+          <!-- Dropdown Menu -->
+          <div id="profile-dropdown-menu" style="display: none; position: absolute; top: 40px; right: 0; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; color: #333; padding: 10px;">
+            <p><b>Username:</b> <span id="dropdown-username"></span></p>
+            <p><b>Full Name:</b> <span id="dropdown-fullName"></span></p>
+            <p><b>Email:</b> <span id="dropdown-email"></span></p>
+            <p><b>Phone:</b> <span id="dropdown-phone"></span></p>
+            <!-- Add other details here if needed -->
+          </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h2><u>Our Experiences, Happy Times, Clients, Projects and More</u></h2>
+        <p>Welcome to our gallery! Here's a visual glimpse of our work, achievements, and partnerships across the agribusiness landscape.</p>
+    </div>
+
+   
+<div class="gallery">
+    <img src="land.png" alt="land">
+    <img src="office4.jpg" alt="office">
+    <img src="R.jpg" alt="tractor">
+    <img src="meeting.jpg" alt="meeting">
+    <img src="agricofficer.jpg" alt="officer">
+    <img src="awards.jpg" alt="Image 6">
+    <img src="conference.jpg" alt="conference">
+    <img src="work1.jpg" alt="office">
+    <img src="presentation.jpg" alt="presentation">
+    <img src="drone.jpg" alt="drone">
+    <img src="work.jpg" alt="office">
+    <img src="money.jpg" alt="money">
+    <img src="workshop.jpg" alt="workshop">
+    <img src="cocoa.jpeg" alt="cocoa">
+    <img src="lab2.jpg" alt="lab">
+    <img src="ocean.jpg" alt="ocean">
+    <img src="corn.jpg" alt="corn">
+    <img src="office5.jpg" alt="office">
+    
+</div>
+
+
+    </div>
+    <div class="footer">
+        <p>© 2025 The AgGenius Consultancy Services. All Rights Reserved.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

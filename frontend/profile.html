@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2 id="profile-heading">User Profile</h2>
+    <div id="profile-details">
+      <!-- User details will be loaded here by JavaScript -->
+      <p><b>Username:</b> <span id="profile-username"></span></p>
+      <p><b>Full Name:</b> <span id="profile-fullName"></span></p>
+      <p><b>Email:</b> <span id="profile-email"></span></p>
+      <p><b>Phone Number:</b> <span id="profile-phone"></span></p>
+      <!-- Add other details as needed -->
+    </div>
+    <div id="loading-message" style="text-align: center;">Loading profile...</div>
+    <div id="error-message" style="text-align: center; color: red;"></div>
+  </div>
+
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function() {
+      const profileDetailsDiv = document.getElementById('profile-details');
+      const loadingMessage = document.getElementById('loading-message');
+      const errorMessage = document.getElementById('error-message');
+      const profileHeading = document.getElementById('profile-heading');
+
+      profileDetailsDiv.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      try {
+        const profile = await auth.getProfile(); // Use the existing getProfile function from script.js
+        if (profile) {
+          document.getElementById('profile-username').textContent = profile.username || 'N/A';
+          document.getElementById('profile-fullName').textContent = profile.full_name || 'N/A';
+          document.getElementById('profile-email').textContent = profile.email || 'N/A';
+          document.getElementById('profile-phone').textContent = profile.phone_number || 'N/A';
+          // Update other fields if you add them
+
+          profileDetailsDiv.style.display = 'block';
+          profileHeading.textContent = `${profile.full_name || profile.username || 'User'}'s Profile`;
+
+        } else {
+            errorMessage.textContent = 'Could not load profile data.';
+            errorMessage.style.display = 'block';
+        }
+      } catch (error) {
+        console.error("Error loading profile:", error);
+        errorMessage.textContent = 'Error fetching profile: ' + (error.message || 'Unknown error');
+        errorMessage.style.display = 'block';
+      } finally {
+        loadingMessage.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - The AgGenius Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f8f8f8;
+    }
+
+    .header {
+      background-image: url('journals.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(48, 31, 11);
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      margin: 4px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar a.active {
+      background-color: #4caf50;
+    }
+
+    .main {
+      padding: 40px 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .main h2 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .main p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        padding: 20px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar a {
+        width: 90%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>ABOUT US</h1>
+  </div>
+
+  <div class="navbar">
+    <a href="index.html">HOME</a>
+    <a href="about.html" class="active">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="blog.html">BLOGSITE</a>
+    <a href="#" id="logout-link">LOGOUT</a>
+    <!-- Container for user profile picture and username dropdown -->
+    <div id="nav-user-dropdown" style="position: relative; display: none;">
+      <div id="nav-user-profile-trigger" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+        <img id="nav-profile-pic" src="" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span id="nav-username" style="color: white; font-weight: bold;"></span>
+      </div>
+      <!-- Dropdown Menu -->
+      <div id="profile-dropdown-menu" style="display: none; position: absolute; top: 40px; right: 0; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; color: #333; padding: 10px;">
+        <p><b>Username:</b> <span id="dropdown-username"></span></p>
+        <p><b>Full Name:</b> <span id="dropdown-fullName"></span></p>
+        <p><b>Email:</b> <span id="dropdown-email"></span></p>
+        <p><b>Phone:</b> <span id="dropdown-phone"></span></p>
+        <!-- Add other details here if needed -->
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <h2><u>Here's All You Need To Know ABOUT US:</u></h2>
+
+    <h2>Our Story</h2>
+    <p>
+      The AgGenius (TAG) is a user-friendly agricultural consultancy platform designed to bridge the gap between
+      agricultural expertise and practical implementation. As an agribusiness consultancy, we provide expert financial
+      advice and professional services to individuals, businesses, government organizations, and other interested parties
+      in the agricultural sector.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to improve the income levels of our clients through expert financial advice and sustainable
+      agricultural practices. We work with stakeholders across all sectors of the agribusiness supply chain to ensure
+      comprehensive and effective solutions.
+    </p>
+
+    <p>
+      The aim of this project is to design a user-friendly website known as The AgGenius (TAG). The AgGenius Consultancy
+      Services is an agribusiness consultancy that provides expert financial advice and other professional services to
+      individuals, businesses, government organizations, and any other interested party in the agricultural sector.
+    </p>
+
+    <p>
+      We are committed to enhancing growth in agribusiness by providing data-driven solutions, financial planning, and
+      strategic consulting.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Our Expertise</h3>
+        <ul>
+          <li>Agricultural Financial Planning</li>
+          <li>Farm Management Consulting</li>
+          <li>Investment Advisory</li>
+          <li>Sustainable Farming Practices</li>
+          <li>Supply Chain Optimization</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Why Choose Us</h3>
+        <ul>
+          <li>Expert Team of Consultants</li>
+          <li>Years of Industry Experience</li>
+          <li>Customized Solutions</li>
+          <li>Proven Track Record</li>
+          <li>Continuous Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px">
+      <h2>Join Our Community</h2>
+      <p>
+        Whether you're a farmer looking to optimize your operations, an investor seeking agricultural opportunities, or a
+        business aiming to improve its agricultural supply chain, we're here to help.
+      </p>
+      <div style="text-align: center; margin-top: 20px">
+        <a href="contact.html" class="btn">Contact Us Today</a>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="card">
+        <img src="money.png" alt="money" />
+        <div class="card-content">
+          <h3>Meet Our Experts</h3>
+          <p>We have a dedicated team of professionals ready to serve you:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Expert Name</th>
+                <th>Expert Email/Number</th>
+                <th>Expert Area</th>
+                <th>Times Available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Dr Izzie Stevens</td><td>I.stevens@gmail.com / 055 824 9876</td><td>Financial Advisory</td><td>Morning: Mon–Wed</td></tr>
+              <tr><td>Prof. Abayie Oppong</td><td>oppong.ab@gmail.com / 055 876 4456</td><td>Financial Advisory</td><td>Afternoon: Mon–Wed</td></tr>
+              <tr><td>Prof. Owusu Serebour</td><td>seresu@gmail.com / 055 345 5665</td><td>Agricultural Economist</td><td>Morning: Mon–Wed</td></tr>
+              <tr><td>Dr Abayie N. Osei</td><td>N.abaysei@gmail.com / 055 943 2765</td><td>Agricultural Economist</td><td>Afternoon: Mon–Wed</td></tr>
+              <tr><td>Prof. Mercy Ansah-Yeboah</td><td>mercya.boah@gmail.com / 055 887 4399</td><td>Farm Business Strategy</td><td>Morning: Mon–Wed</td></tr>
+              <tr><td>Dr Abdul Aziz Yussif</td><td>seresu@gmail.com / 055 333 8888</td><td>Farm Business Strategy</td><td>Afternoon: Mon–Wed</td></tr>
+              <tr><td>Prof. Gertrude Esinam Ablor</td><td>gettyesh@gmail.com / 055 257 6483</td><td>Financial Advisory</td><td>Morning: Thu–Sat</td></tr>
+              <tr><td>Prof. Lutherodt Ansah-Kwaw</td><td>luukwaw@gmail.com / 055 473 9845</td><td>Financial Advisory</td><td>Afternoon: Thu–Sat</td></tr>
+              <tr><td>Dr Albert Musah</td><td>musahbert67@gmail.com / 055 236 1198</td><td>Agricultural Economist</td><td>Morning: Thu–Sat</td></tr>
+              <tr><td>Prof Millicent Taggoe</td><td>tag.mil@gmail.com / 055 548 9326</td><td>Agricultural Economist</td><td>Afternoon: Thu–Sat</td></tr>
+              <tr><td>Dr Marjorie B. Appiah</td><td>b.ppiah34@gmail.com / 055 753 4398</td><td>Farm Business Strategy</td><td>Morning: Thu–Sat</td></tr>
+              <tr><td>Dr Clide Jefferson</td><td>jef.clide@gmail.com / 055 500 0091</td><td>Farm Business Strategy</td><td>Afternoon: Thu–Sat</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 The AgGenius Consultancy Services. All Rights Reserved.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

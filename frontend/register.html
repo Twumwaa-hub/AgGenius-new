@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - AgGenius</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Add styles for the two-column layout */
+      .form-row {
+        display: flex;
+        justify-content: space-between; /* Distribute space between columns */
+        gap: 20px; /* Space between the columns */
+        margin-bottom: 15px; /* Space between rows */
+      }
+
+      .form-row .form-group {
+        flex: 1; /* Allow form groups to grow and shrink */
+        min-width: 150px; /* Minimum width for form groups to prevent excessive squeezing */
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555; /* Slightly darker label color */
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group input[type="password"],
+      .form-group input[type="file"] {
+        width: 100%; /* Make inputs fill their container */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+
+       .form-group input[type="file"] {
+         padding-top: 7px; /* Adjust padding for file input */
+       }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .form-row {
+          flex-direction: column; /* Stack columns on smaller screens */
+          gap: 0; /* Remove gap when stacked */
+        }
+
+        .form-row .form-group {
+           min-width: 100%; /* Full width when stacked */
+           margin-bottom: 15px; /* Add space between stacked form groups */
+        }
+      }
+    </style>
+  </head>
+  <body class="auth-layout">
+    <div class="header">
+      <h1>Create AgGenius Account</h1>
+    </div>
+
+    <div class="auth-container">
+      <form id="register-form" onsubmit="return validateForm(event)">
+        <!-- First row: Username and Email -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <!-- Second row: Phone Number and Full Name -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required />
+          </div>
+        </div>
+
+        <!-- Third row: Password and Confirm Password -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="6"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Profile Picture field (single row) -->
+        <div class="form-group">
+          <label for="profile-picture">Profile Picture</label>
+          <input type="file" id="profile-picture" name="profile-picture" accept="image/*" />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn">Register</button>
+
+        <p style="text-align: center; margin-top: 20px">
+          Already have an account? <a href="login.html">Login here</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 AgGenius Consultancy Services. All Rights Reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      async function validateForm(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const fullName = document.getElementById("full-name").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+        const submitButton = document.querySelector('button[type="submit"]');
+        const profilePictureInput = document.getElementById('profile-picture');
+        const profilePictureFile = profilePictureInput.files[0];
+
+        if (password !== confirmPassword) {
+          showToast("Passwords do not match!", "error");
+          return false;
+        }
+
+        try {
+          setButtonLoading(submitButton, true);
+          await auth.register(username, email, fullName, phone, password, profilePictureFile);
+          showToast("Registration successful! Please login.", "success");
+          window.location.href = "login.html";
+        } catch (error) {
+         
+        } finally {
+          setButtonLoading(submitButton, false);
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
